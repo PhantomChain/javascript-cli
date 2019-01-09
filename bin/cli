@@ -58,7 +58,7 @@ commander
   .option('-l, --ledger', 'Use your Ledger device instead of a passphrase.')
   .option('-s, --signature [signature]', 'Enter your second signature, if you do not enter one you will be prompted for it.')
   .option('-b, --smartbridge [smartbridge]', 'Enter a string for the SmartBridge.')
-  .option('--fee [fee]', 'Specify a dynamic fee in Arktoshis. Defaults to 10000000 = 0.1 ARK.')
+  .option('--fee [fee]', 'Specify a dynamic fee in Phantomtoshis. Defaults to 10000000 = 0.1 XPH.')
   .option('-i, --interactive', 'Prompt to confirm transaction.')
   .action(async (amount, recepient, cmd) => wallet.send(amount, recepient, cmd))
 
@@ -72,7 +72,7 @@ commander
   .option('-p, --passphrase [passphrase]', 'Enter your passphrase, if you do not enter e passphrase you will be prompted for it.')
   .option('-l, --ledger', 'Use your Ledger device instead of a passphrase.')
   .option('-s, --signature [signature]', 'Enter your second signature, if you do not enter one you will be prompted for it.')
-  .option('--fee [fee]', 'Specify a dynamic fee in Arktoshis. Defaults to 100000000 = 1 ARK.')
+  .option('--fee [fee]', 'Specify a dynamic fee in Phantomtoshis. Defaults to 100000000 = 1 XPH.')
   .option('-i, --interactive', 'Prompt to confirm transaction.')
   .action(async (delegate, cmd) => wallet.vote(delegate, cmd))
 
@@ -86,7 +86,7 @@ commander
   .option('-p, --passphrase [passphrase]', 'Enter your passphrase, if you do not enter e passphrase you will be prompted for it.')
   .option('-l, --ledger', 'Use your Ledger device instead of a passphrase.')
   .option('-s, --signature [signature]', 'Enter your second signature, if you do not enter one you will be prompted for it.')
-  .option('--fee [fee]', 'Specify a dynamic fee in Arktoshis. Defaults to 100000000 = 1 ARK.')
+  .option('--fee [fee]', 'Specify a dynamic fee in Phantomtoshis. Defaults to 100000000 = 1 XPH.')
   .option('-i, --interactive', 'Prompt to confirm transaction.')
   .action(async (cmd) => wallet.unvote(cmd))
 
@@ -99,7 +99,7 @@ commander
   .option('-v, --verbose', 'Show verbose logging.')
   .option('-p, --passphrase [passphrase]', 'Enter your passphrase, if you do not enter e passphrase you will be prompted for it.')
   .option('-s, --signature [signature]', 'Enter your second signature, if you do not enter one you will be prompted for it.')
-  .option('--fee [fee]', 'Specify a dynamic fee in Arktoshis. Defaults to 2500000000 = 25 ARK.')
+  .option('--fee [fee]', 'Specify a dynamic fee in Phantomtoshis. Defaults to 2500000000 = 25 XPH.')
   .option('-i, --interactive', 'Prompt to confirm transaction.')
   .action(async (username, cmd) => wallet.delegate(username, cmd))
 
@@ -111,7 +111,7 @@ commander
   .option('-f, --format <format>', 'Specify how to format the output [json|table]', 'json')
   .option('-v, --verbose', 'Show verbose logging.')
   .option('-p, --passphrase [passphrase]', 'Enter your passphrase, if you do not enter e passphrase you will be prompted for it.')
-  .option('--fee [fee]', 'Specify a dynamic fee in Arktoshis. Defaults to 500000000 = 5 ARK.')
+  .option('--fee [fee]', 'Specify a dynamic fee in Phantomtoshis. Defaults to 500000000 = 5 XPH.')
   .option('-i, --interactive', 'Prompt to confirm transaction.')
   .action(async (signature, cmd) => wallet.signature(signature, cmd))
 

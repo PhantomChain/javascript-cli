@@ -23,7 +23,7 @@ describe('output.setFormat', () => {
 
   it('should throw on other input than json or table', () => {
     expect(() => {
-      output.setFormat('ark')
+      output.setFormat('phantom')
     }).toThrow()
   })
 })
@@ -34,7 +34,7 @@ describe('output.setCurrencySymbol', () => {
   })
 
   it('should correctly define and set the inputted currency symbol for the output object', () => {
-    const currencySymbol = 'Ѧ'
+    const currencySymbol = 'ⓟ'
     output.setCurrencySymbol(currencySymbol)
     expect(output.symbol).toBeDefined()
     expect(output.symbol).toBe(currencySymbol)
@@ -47,7 +47,7 @@ describe('output.setTitle', () => {
   })
 
   it('should correctly define and set the inputted title for the output object', () => {
-    const title = 'Ark'
+    const title = 'Phantom'
     output.setTitle(title)
     expect(output.title).toBeDefined()
     expect(output.title).toBe(title)
@@ -61,9 +61,9 @@ describe('output.__formatBalance', () => {
 
   it('should return a correctly formatted balance', () => {
     const amount = 110000000
-    const currencySymbol = 'Ѧ'
+    const currencySymbol = 'ⓟ'
     output.setCurrencySymbol(currencySymbol)
-    expect(output.__formatBalance(amount)).toBe('Ѧ 1.1')
+    expect(output.__formatBalance(amount)).toBe('ⓟ 1.1')
   })
 })
 

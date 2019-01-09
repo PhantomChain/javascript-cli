@@ -1,33 +1,33 @@
 'use strict'
 
-const LedgerArk = require('../../lib/ledger/LedgerArk.js')
+const LedgerPhantom = require('../../lib/ledger/LedgerPhantom.js')
 
-describe('LedgerArk', () => {
+describe('LedgerPhantom', () => {
   it('should be an object', () => {
-    expect(LedgerArk).toBeObject()
+    expect(LedgerPhantom).toBeObject()
   })
 })
 
-describe('LedgerArk.setComm', () => {
+describe('LedgerPhantom.setComm', () => {
   it('should be a function', () => {
-    expect(LedgerArk.setComm).toBeFunction()
+    expect(LedgerPhantom.setComm).toBeFunction()
   })
 })
 
-describe('LedgerArk.getPublicKey', () => {
+describe('LedgerPhantom.getPublicKey', () => {
   it('should be a function', () => {
-    expect(LedgerArk.getPublicKey).toBeFunction()
+    expect(LedgerPhantom.getPublicKey).toBeFunction()
   })
 })
 
-describe('LedgerArk.signTransaction', () => {
+describe('LedgerPhantom.signTransaction', () => {
   it('should be a function', () => {
-    expect(LedgerArk.signTransaction).toBeFunction()
+    expect(LedgerPhantom.signTransaction).toBeFunction()
   })
 })
 
-describe('LedgerArk.getAppConfiguration', () => {
+describe('LedgerPhantom.getAppConfiguration', () => {
   it('should be a function', () => {
-    expect(LedgerArk.getAppConfiguration).toBeFunction()
+    expect(LedgerPhantom.getAppConfiguration).toBeFunction()
   })
 })

@@ -1,8 +1,8 @@
 {
-  "name": "@arkecosystem/cli",
-  "description": "CLI for the Ark Blockchain",
+  "name": "@phantomchain/cli",
+  "description": "CLI for the PHANTOM Blockchain",
   "keywords": [
-    "ark",
+    "phantom",
     "blockchain",
     "spv",
     "lite",
@@ -15,7 +15,7 @@
   ],
   "license": "MIT",
   "bin": {
-    "ark:cli": "./bin/cli"
+    "phantom:cli": "./bin/cli"
   },
   "scripts": {
     "test": "jest --forceExit",
@@ -23,7 +23,7 @@
     "lint": "eslint ./ --fix"
   },
   "dependencies": {
-    "@arkecosystem/crypto": "^0.1.2",
+    "@phantomchain/crypto": "^0.1.2",
     "ascii-table": "^0.0.9",
     "axios": "^0.18.0",
     "bs58check": "^2.1.2",

@@ -13,8 +13,8 @@ describe('account.getAccountFromSeed', () => {
     expect(account.getAccountFromSeed).toBeFunction()
   })
 
-  it('should return a valid ARK account object for a seed and networkVersion <23>', () => {
-    const networkVersion = 23
+  it('should return a valid PHANTOM account object for a seed and networkVersion <55>', () => {
+    const networkVersion = 55
     const seed = 'candy maple cake sugar pudding cream honey rich smooth crumble sweet treat'
     expect(account.getAccountFromSeed(seed, networkVersion)).toContainKeys(['address', 'networkVersion', 'publicKey', 'passphrase'])
   })

@@ -29,35 +29,35 @@ describe('input.promptConfirmTransaction', () => {
   })
 })
 
-describe('input.amountToARK', () => {
+describe('input.amountToXPH', () => {
   it('should be a function', () => {
-    expect(input.amountToARK).toBeFunction()
+    expect(input.amountToXPH).toBeFunction()
   })
 
-  it('should return the correct ARKToshi value when inputting the amount in ARK', async () => {
+  it('should return the correct PHANTOMToshi value when inputting the amount in XPH', async () => {
     let amount = '1'
-    let response = await input.amountToARK(amount)
+    let response = await input.amountToXPH(amount)
     expect(response).toBe(100000000)
 
     amount = '1.1'
-    response = await input.amountToARK(amount)
+    response = await input.amountToXPH(amount)
     expect(response).toBe(110000000)
 
     amount = '1,1'
-    response = await input.amountToARK(amount)
+    response = await input.amountToXPH(amount)
     expect(response).toBe(110000000)
   })
 
-  it('should accept an amount in one of the predefined fiat currency and return the correct value in ARKToshi', async () => {
+  it('should accept an amount in one of the predefined fiat currency and return the correct value in PHANTOMToshi', async () => {
     const amount = '1 USD'
-    const response = await input.amountToARK(amount)
+    const response = await input.amountToXPH(amount)
     expect(response).toBeGreaterThan(0)
   })
 
   it('should throw a RangeError when inputted amount is 0', async () => {
     let amount = '0'
     try {
-      await input.amountToARK(amount)
+      await input.amountToXPH(amount)
       throw new Error('Should fail and go to catch')
     } catch (error) {
       expect(error).toBeInstanceOf(RangeError)
@@ -65,7 +65,7 @@ describe('input.amountToARK', () => {
 
     amount = '0 USD'
     try {
-      await input.amountToARK(amount)
+      await input.amountToXPH(amount)
       throw new Error('Should fail and go to catch')
     } catch (error) {
       expect(error).toBeInstanceOf(RangeError)
@@ -76,18 +76,18 @@ describe('input.amountToARK', () => {
     const amount = Math.pow(2, 53)
 
     try {
-      await input.amountToARK(amount)
+      await input.amountToXPH(amount)
       throw new Error('Should fail and go to catch')
     } catch (error) {
       expect(error).toBeInstanceOf(RangeError)
     }
   })
 
-  it('should throw a RangeError if calculated ARKToshi value is not a safe integer', async () => {
-    const amount = 100000000 // sorry whales, you can't send 100.000.000 ARK in 1 transaction. Blame JavaScript.
+  it('should throw a RangeError if calculated PHANTOMToshi value is not a safe integer', async () => {
+    const amount = 100000000 // sorry whales, you can't send 100.000.000 XPH in 1 transaction. Blame JavaScript.
 
     try {
-      await input.amountToARK(amount)
+      await input.amountToXPH(amount)
       throw new Error('Should fail and go to catch')
     } catch (error) {
       expect(error).toBeInstanceOf(RangeError)
@@ -161,21 +161,21 @@ describe('input.__formatNumberFloat', () => {
   })
 })
 
-describe('input.__getARKTicker', () => {
+describe('input.__getXPHTicker', () => {
   it('should be a function', () => {
-    expect(input.__getARKTicker).toBeFunction()
+    expect(input.__getXPHTicker).toBeFunction()
   })
 
   it('should return an exchange rate for accepted currencies', async () => {
     const currency = 'USD'
-    const exchangeRate = await input.__getARKTicker(currency)
+    const exchangeRate = await input.__getXPHTicker(currency)
     expect(exchangeRate).toBeGreaterThan(0)
   })
 
   it('should throw an URIError for unknown currencies', async () => {
     const currency = 'noCurrency'
     try {
-      await input.__getARKTicker(currency)
+      await input.__getXPHTicker(currency)
       throw new Error('Should fail and go to catch')
     } catch (error) {
       expect(error).toBeInstanceOf(URIError)
